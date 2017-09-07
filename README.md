@@ -67,7 +67,7 @@ https://github.com/Waxiangyu/vf.git
 
 ## 查看页面
 
- [点击查看](https://Waxiangyu.github.io/component-vf/business/index.html#!/admin/button/button.html)
+ [点击查看](https://waxiangyu.github.io/vf/business/index.html#!/admin/button/button.html)
 
 
 
