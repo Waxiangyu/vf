@@ -1,0 +1,151 @@
+
+/*当前位置样式*/
+.currentLocation{
+  //--------鼠标点击过快出现蓝色解决方案------
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+  //--------鼠标点击过快出现蓝色解决方案------
+  position: absolute;
+  //z-index: 999999;
+  @main-height:60px;
+  height: @main-height;
+  width: 76%;
+  margin: 50px 20px;
+  //当前位置左侧内容
+  >.locationLeft {
+    position: absolute;
+    z-index: 800;
+    top: 0;
+    left: 0;
+    float: left;
+    height: @main-height;
+    width: 13%;
+    //background: #567ed2;
+    //border-right:1px solid #567ed2;
+    >span {
+      > a{
+        width: 68%;
+        height: @main-height;
+        line-height: @main-height;
+        display: inline-block;
+        margin-left: 12%;
+        font-size: 20px;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: default;
+      }
+    }
+    >i{
+      color:#ffffff;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+  //当前位置右侧内容
+  .locationRight {
+    position: absolute;
+    top: 0;
+    left: 13%;
+    float:left;
+    height: @main-height;
+    width: 87%;
+    opacity: 0;
+    //background:#698cd8;
+    //具体导航
+    .locationFloat{
+      float:left;
+      height: @main-height;
+      width:140px;
+      >span{
+        float:left;
+        width: 140px;
+        height: 40px;
+        display: inline-block;
+        margin: 11px 0;
+        //border-right:1px solid #5abfb9;
+        &:hover,
+        &:focus,
+        &:active {
+          //border-right:1px solid #567ed2;
+        }
+        > a {
+          text-align: center;
+          width:140px;
+          height: 38px;
+          line-height: 38px;
+          display: inline-block;
+          font-size: 16px;
+          color: #ffffff;
+          font-weight: bold;
+          //鼠标滑过字体颜色变暗
+          &:hover,
+          &:focus,
+          &:active {
+            color: #edf0f6;
+            font-size: 20px;
+          }
+        }
+      }
+      //最后一个没有竖线
+      &:last-child {
+        > span {
+          border-right: none;
+        }
+      }
+      //鼠标滑过样式改变
+      &:hover,
+      &:focus,
+      &:active {
+        //background:#21c3b9;
+      }
+    }
+  }
+
+
+  //css3动画
+  //向左运动
+  .slidingToLeft {
+    -webkit-animation: slidingToLeft 2s ease 0s forwards;
+  }
+
+
+  @-webkit-keyframes slidingToLeft {
+    0% {
+      opacity: 1;
+      //-webkit-transform: translateX(0px);
+      //transform: translateX(0px)
+    }
+
+    100% {
+      opacity: 0;
+      //-webkit-transform: translateX(-3000px);
+      //transform: translateX(-3000px)
+    }
+  }
+
+  //向右运动
+  .slidingToRight{
+    -webkit-animation: slidingToRight 2s ease 0s forwards;
+  }
+
+
+  @-webkit-keyframes slidingToRight {
+    0% {
+      opacity: 0;
+      //-webkit-transform: translateX(-3000px);
+      //transform: translateX(-3000px)
+    }
+
+    100% {
+      opacity: 1;
+      //-webkit-transform: translateX(0px);
+      //transform: translateX(0px)
+    }
+  }
+}
+
+
+
